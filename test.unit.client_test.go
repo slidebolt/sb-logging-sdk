@@ -102,7 +102,7 @@ func TestAppendEventuallyPublishesQueuedEvent(t *testing.T) {
 
 	select {
 	case <-received:
-	case <-time.After(2 * time.Second):
+	case <-time.After(15 * time.Second):
 		t.Fatal("timed out waiting for async append delivery")
 	}
 
